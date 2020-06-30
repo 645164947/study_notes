@@ -41,7 +41,7 @@ Git是一个版本管理控制系统（缩写VCS），它可以在任何时间�
 - 用暂存区中的文件覆盖工作目录中的文件： `git checkout 文件`
 
 - 将文件从暂存区中删除： `git rm --cached 文件`
-- 将 git 仓库中指定的更新记录恢复出来，并且覆盖暂存区和工作目录：`git rest --hard commitID` 
+- 将 git 仓库中指定的更新记录恢复出来，并且覆盖暂存区和工作目录：`git reset --hard commitID` 
 
 ![](assets/07.png)
 
