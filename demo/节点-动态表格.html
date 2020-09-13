@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 400px;
+            border-collapse: collapse;
+        }
+        
+        th,
+        td,
+        tr {
+            border: 1px solid black;
+        }
+        
+        th {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>动态表格</caption>
+        <thead>
+            <tr>
+                <th>名字</th>
+                <th>学科</th>
+                <th>分数</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+
+
+    </table>
+    <script>
+        // 1.先去准备好学生的数据
+        var datas = [{
+            name: '魏璎珞',
+            subject: 'JavaScript',
+            score: 100
+        }, {
+            name: '弘历',
+            subject: 'JavaScript',
+            score: 98
+        }, {
+            name: '傅恒',
+            subject: 'JavaScript',
+            score: 99
+        }, {
+            name: '明玉',
+            subject: 'JavaScript',
+            score: 88
+        }, {
+            name: '憨憨',
+            subject: 'JavaScript',
+            score: 0
+        }];
+        //需要创建行，
+        var tbody_ = document.querySelector('tbody');
+        //遍历数组
+        for (var i = 0; i < datas.length; i++) {
+            var tr_ = document.createElement('tr');
+            tbody_.appendChild(tr_);
+            //遍历学生对象获取列
+            for (k in datas[i]) {
+                var td_ = document.createElement('td');
+                //把对象里的属性值给td
+                td_.innerHTML = datas[i][k];
+                tr_.appendChild(td_);
+            }
+            var td_ = document.createElement('td');
+            td_.innerHTML = '<a href="javascript:;">删除 </a>';
+            tr_.appendChild(td_);
+        }
+        var as = document.querySelectorAll('a');
+        for (var i = 0; i < as.length; i++) {
+            as[i].onclick = function() {
+                // 点击a 删除 当前a 所在的行(链接的爸爸的爸爸)  node.removeChild(child)  
+                tbody_.removeChild(this.parentNode.parentNode)
+            }
+        }
+    </script>
+</body>
+
+</html>

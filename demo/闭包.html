@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>一一一一一一</li>
+        <li>二二二二二二</li>
+        <li>三三三三三三</li>
+        <li>四四四四四四</li>
+    </ul>
+
+    <script>
+        var lis = document.querySelectorAll('li');
+        for (var i = 0; i < lis.length; i++) {
+            // 闭包 访问外部作用域的变量
+            // 自动执行函数创建个小闭包 
+            (function(i) {
+                lis[i].onclick = function() {
+                    console.log(i)
+                }
+            })(i);
+        }
+    </script>
+</body>
+
+</html>

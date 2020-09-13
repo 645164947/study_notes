@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .nav {
+            position: relative;
+            top: 100px;
+            left: 200px;
+            height: 40px;
+        }
+        
+        .nav li {
+            float: left;
+            position: relative;
+        }
+        
+        .nav li .nav-a {
+            padding: 0 30px;
+        }
+        
+        .nav li a {
+            display: block;
+            color: black;
+            background-color: #fbfefa;
+            line-height: 40px;
+        }
+        
+        .nav .nav-a:hover {
+            color: #e2a755;
+        }
+        
+        .nav a:hover {
+            background-color: #ebede9;
+        }
+        
+        .nav li ul {
+            display: none;
+            position: absolute;
+        }
+        
+        .nav li ul li {
+            float: none;
+            width: 106px;
+            text-align: center;
+            border: 1px solid #e2a755;
+            border-top: 0;
+        }
+        
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
+        }
+        
+        .clearfix:after {
+            clear: both;
+        }
+        
+        .clearfix {
+            *zoom: 1;
+        }
+        
+        .order li {
+            width: 150px!important;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav clearfix">
+        <li>
+            <a class="nav-a" href="#">下拉一</a>
+            <ul>
+                <li><a href="">选项一</a></li>
+            </ul>
+        </li>
+        <li>
+            <a class="nav-a" href="#">下拉二</a>
+            <ul>
+                <li><a href="">选项一</a></li>
+                <li><a href="">选项二</a></li>
+            </ul>
+        </li>
+        <li>
+            <a class="nav-a" href="#">下拉三</a>
+            <ul>
+                <li><a href="">选项一</a></li>
+                <li><a href="">选项二</a></li>
+                <li><a href="">选项三</a></li>
+            </ul>
+        </li>
+        <li>
+            <a class="nav-a" href="#">下拉四</a>
+            <ul class="order">
+                <li><a href="">选项一一一一</a></li>
+                <li><a href="">选项二二二二</a></li>
+                <li><a href="">选项三三三三</a></li>
+                <li><a href="">选项四四四四 </a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        var nav = document.querySelector('.nav');
+        var lis = nav.children;
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onmouseover = function() {
+                // console.log("11");
+                this.children[1].style.display = 'block';
+            }
+            lis[i].onmouseout = function() {
+                this.children[1].style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

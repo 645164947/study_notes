@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var time = +new Date();
+
+        function fb(n) {
+            if (n == 1 || n == 2) {
+                return 1;
+            }
+            return fb(n - 2) + fb(n - 1);
+        }
+        console.log(fb(40));
+        var time2 = +new Date();
+        var timer = time2 - time;
+        console.log(timer + 'ms');
+
+        function ffb(n) {
+            var f1 = 1;
+            var f2 = 1;
+            for (var i = 2; i < n; i++) {
+                sum = f1 + f2;
+                f1 = f2;
+                f2 = sum;
+            }
+            return sum;
+        }
+        console.log(ffb(40));
+        time3 = +new Date();
+        console.log(time3 - time2);
+    </script>
+</body>
+
+</html>

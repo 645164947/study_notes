@@ -1,0 +1,22 @@
+<div class="father">
+    <div class="son">son儿子</div>
+</div>
+<script>
+    var son = document.querySelector('.son');
+    // 给son注册单击事件
+    son.addEventListener('click', function(e) {
+        alert('son');
+        // e.stopPropagation(); // stop 停止  Propagation 传播
+        // window.event.cancelBubble = true; // 非标准 cancel 取消 bubble 泡泡
+    }, false);
+
+    var father = document.querySelector('.father');
+    // 给father注册单击事件
+    father.addEventListener('click', function() {
+        alert('father');
+    }, false);
+    // 给document注册单击事件
+    document.addEventListener('click', function() {
+        alert('document');
+    })
+</script>

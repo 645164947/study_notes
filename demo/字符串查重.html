@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var obj = {
+
+        // };
+        // if (obj['a']) {
+        //     console.log("11111");
+
+        // } else {
+        //     // console.log("2222");
+        //     obj['a'] = 1;
+        //     console.log(obj['a']);
+
+
+        // }
+
+        var obj = {};
+        var strings = "abcdefffss";
+        for (var i = 0; i < strings.length; i++) {
+            // console.log(strings.charAt(i));
+            var chats = strings.charAt(i)
+            if (obj[chats]) {
+                obj[chats] += 1;
+            } else {
+                obj[chats] = 1;
+            }
+        }
+        console.log(obj);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

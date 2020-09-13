@@ -1,0 +1,64 @@
+.box {
+    position: absolute;
+    bottom: 0;
+}
+
+.box [class^="box"] {
+    float: left;
+    margin: 0 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.f1 {
+    width: 154px;
+    height: 121px;
+    background: url(../images/txgc_6d0e9e5.png) no-repeat;
+    animation: f1d steps(2) .4s infinite;
+}
+
+@keyframes f1d {
+    100% {
+        background-position: -308px 0;
+    }
+}
+
+.f2 {
+    width: 177px;
+    height: 176px;
+    background: url(../images/txgh_fee2457.png) no-repeat;
+    animation: f2d steps(2) .4s infinite;
+}
+
+@keyframes f2d {
+    100% {
+        background-position: -334px 0;
+    }
+}
+
+.f3 {
+    width: 166px;
+    height: 149px;
+    background: url(../images/txgl_c15cfd8.png) no-repeat;
+    animation: f3d steps(2) .4s infinite;
+}
+
+@keyframes f3d {
+    100% {
+        background-position: -322px 0;
+    }
+}
+
+.f4 {
+    width: 171px;
+    height: 157px;
+    background: url(../images/txgq_d281c9b.png) no-repeat;
+    animation: f4d steps(2) .4s infinite;
+}
+
+@keyframes f4d {
+    100% {
+        background-position: -342px 0;
+    }
+}

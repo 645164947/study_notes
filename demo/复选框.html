@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1" ;>
+        <thead id="th">
+            <tr>
+                <th>
+                    <input id="all" type="checkbox">
+                </th>
+                <th>总复选</th>
+            </tr>
+        </thead>
+
+        <tbody id="tb">
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>复选1</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>复选2</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
+    <script>
+        //获取两类型复选框按钮
+        var th_checkAll = document.getElementById('all');
+        var tb_check = document.getElementById('tb').getElementsByTagName('input');
+
+        //添加点击总复选按钮事件
+        th_checkAll.onclick = function() {
+            //单个的复选框同步多选状态
+            // console.log("22");
+            for (var i = 0; i < tb_check.length; i++) {
+                tb_check[i].checked = this.checked;
+            }
+        }
+
+        //添加单个复选点击按钮事件
+        for (var i = 0; i < tb_check.length; i++) {
+            tb_check[i].onclick = function() {
+                //控制是否全选
+                var flag = true;
+                //每次点击都需要判断是否全部选中
+                for (var i = 0; i < tb_check.length; i++) {
+                    if (!tb_check[i].checked) {
+                        flag = false;
+                        break;
+                    }
+                }
+                th_checkAll.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

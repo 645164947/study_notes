@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .header {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        
+        .nav {
+            display: inline-block;
+            height: 40px;
+            background-color: #edf0ec;
+            border: 1px solid #dee1dd;
+        }
+        
+        .nav li {
+            float: left;
+            height: 40px;
+        }
+        
+        .nav li a {
+            display: block;
+            height: 100%;
+            padding: 0 20px;
+            line-height: 40px;
+            color: black;
+        }
+        
+        .nav .onred {
+            background-color: #d5261d;
+            color: #fff;
+        }
+        
+        #banner div {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <ul class="nav">
+            <li><a class="onred" href="#">商品介绍</a></li>
+            <li><a href="#">规格与包装</a></li>
+            <li><a href="#">售后保障</a></li>
+            <li><a href="#">商品评价<span>(1000)</span></a></li>
+            <li><a href="#">手机社区</a></li>
+        </ul>
+    </div>
+    <div id="banner">
+        <div style="display: block;"><span>商品介绍页面</span></div>
+        <div><span>规格与包装页面</span></div>
+        <div><span>售后保障页面</span></div>
+        <div><span>商品评价页面</span></div>
+        <div><span>手机社区页面</span></div>
+    </div>
+
+
+
+    <script>
+        //获取切换tab和内容页元素
+        var navitem = document.getElementsByTagName('a');
+        var content = document.getElementById('banner').getElementsByTagName('div');
+        //将全部tab绑定点击事件按
+        for (i = 0; i < navitem.length; i++) {
+            //给每一个a设置自定义 index 属性标记页面
+            navitem[i].setAttribute('index', i);
+            navitem[i].onclick = function() {
+                // console.log("1");
+                //排他思想去除样式再设置对应样式
+                for (i = 0; i < navitem.length; i++) {
+                    navitem[i].className = '';
+                }
+                //留下自己
+                this.className = 'onred';
+                //获取页面值
+                var index = this.getAttribute('index');
+                // console.log(index);
+                //隐藏所有让对应显示
+                for (i = 0; i < navitem.length; i++) {
+                    content[i].style.display = 'none';
+                }
+                //设置获取对应页面的display
+                content[index].style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

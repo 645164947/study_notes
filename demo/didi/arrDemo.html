@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arr = [{
+      No: 1,
+      name: '张三'
+    }, {
+      No: 3,
+      name: '李四'
+    }, {
+      No: 4,
+      name: '王五'
+    }, {
+      No: 5,
+      name: '第五'
+    }, {
+      No: 6,
+      name: '第六'
+    }, {
+      No: 7,
+      name: '第七'
+    }]
+    
+    var newArr = []
+    
+    arr.forEach((item, index) => {
+      newArr[item.No] = item.name
+    })
+    console.log(newArr);
+    for(var i = 0; i < newArr.length; i++) {
+      if (!newArr[i]) {
+        newArr[i] = ''
+      }
+    }
+    console.log(newArr);
+  </script>
+</body>
+</html>
